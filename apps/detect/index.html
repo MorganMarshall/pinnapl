@@ -97,7 +97,7 @@
 
 		async function startCamera() {
 			let videoElement = document.getElementById("video");
-			const camera = await tf.data.webcam(videoElement);
+			const camera = await tf.data.webcam.flip(videoElement);
 			setInterval(async () => {
 				const image = await camera.capture();
 				let predictions = await model.classify(image);
