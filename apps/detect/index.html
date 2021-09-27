@@ -97,7 +97,7 @@
 
 		async function startCamera() {
 			let videoElement = document.getElementById("video");
-			const camera = await tf.data.webcam.flip(videoElement);
+			const camera = await tf.data.webcam(videoElement);
 			setInterval(async () => {
 				const image = await camera.capture();
 				let predictions = await model.classify(image);
@@ -108,6 +108,9 @@
          <span class="badge rounded-pill text-light bg-primary">${predictions[0].className}</span>
         `;
 			}, 1000);
+
+			webcam.flip();
+
 		}
 	</script>
 </body>
