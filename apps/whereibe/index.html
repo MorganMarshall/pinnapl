@@ -15,20 +15,16 @@
       <a class="navbar-brand" href="#">IP Lookup</a>
     </div>
   </nav>
+
   <main id="app">
     <div class="container">
       <div class="card bg-secondary mt-4">
         <div class="card-body text-light">
           <h2 class="card-title display-2">Your IP info</h5>
             <p class="dataGet"></p>
-
             <pre id="output"></pre>
         </div>
       </div>
-    
-
-   
-
     </div>
   </main>
 
@@ -37,7 +33,6 @@
     crossorigin="anonymous"></script>
 
   <script>
-
 
     fetch("https://api.techniknews.net/ipgeo/")
       .then((response) => response.json())
@@ -50,11 +45,10 @@
         });
       });
 
-      function shorty(elementName) {
-      return  document.querySelector(elementName);
-      }
+    function shorty(elementName) {
+      return document.querySelector(elementName);
+    }
 
-      console.log(shorty('#output'));
   </script>
 
 </body>
